@@ -1,93 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Narendra Ghanchi | Data Analyst</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Narendra Ghanchi | Data Analytics Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #f3f4f6;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+    .profile-pic {
+      border-radius: 9999px;
+      box-shadow: 0 0 20px #0ea5e9;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 0 8px #0ea5e9);
+      max-width: 200px;
+      max-height: 200px;
+      object-fit: cover;
+    }
+    .profile-pic:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 12px #38bdf8);
+    }
+    .btn-cv {
+      background: linear-gradient(90deg, #ec4899, #8b5cf6);
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      color: white;
+    }
+    .btn-cv:hover {
+      background: linear-gradient(90deg, #a21caf, #6d28d9);
+    }
+    nav a {
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #a78bfa;
+    }
+    .project-image {
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 15px rgba(14, 165, 233, 0.5);
+      object-fit: cover;
+      max-width: 100%;
+      height: auto;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .project-image:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 25px rgba(14, 165, 233, 0.8);
+    }
+    .stats-item {
+      border-left: 1px solid #4b5563;
+    }
+    .stats-item:first-child {
+      border-left: none;
+    }
+    footer {
+      background-color: #111827;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      text-align:center;
+      font-size: 0.875rem;
+      color: #9ca3af;
+    }
+    /* Toggle Dark Mode Button */
+    .toggle-dark {
+      background: transparent;
+      border: 2px solid #8b5cf6;
+      color: #8b5cf6;
+      border-radius: 9999px;
+      padding: 0.3rem 1rem;
+      cursor: pointer;
+      font-weight: 700;
+      transition: all 0.3s ease;
+    }
+    .toggle-dark:hover {
+      background: #8b5cf6;
+      color: #1f2937;
+    }
+  </style>
 </head>
-<body>
+<body class="flex flex-col min-h-screen">
+  <header class="container mx-auto px-6 py-6 flex justify-between items-center">
+    <h1 class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-pink-500 select-none">Narendra Ghanchi</h1>
+    <nav class="space-x-6 text-gray-300 font-semibold">
+      <a href="#about" class="hover:text-indigo-400">About</a>
+      <a href="#skills" class="hover:text-indigo-400">Skills</a>
+      <a href="#projects" class="hover:text-indigo-400">Portfolio</a>
+      <a href="#contact" class="hover:text-indigo-400">Contact</a>
+    </nav>
+  </header>
 
-    <header>
-        <img src="images/profile.jpg" alt="Narendra Ghanchi" class="fade-in">
-        <h1 class="slide-in">Narendra Ghanchi</h1>
-        <p class="typewriter">Data Analyst | Power BI | SQL | Python | Excel</p>
-    </header>
-
-    <section id="about" class="fade-up">
-        <h2>About Me</h2>
-        <p>I am a result-driven Data Analyst skilled at transforming complex data into actionable business insights through interactive dashboards and reports.</p>
+  <main class="container mx-auto px-6 flex-grow">
+    <section id="hero" class="flex flex-col md:flex-row items-center justify-between gap-10 py-12">
+      <div class="max-w-lg text-center md:text-left">
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Hello, I'm <span class="text-indigo-500">Narendra Ghanchi</span></h2>
+        <h3 class="text-xl md:text-2xl mb-5 font-semibold">Data Analytics & Business Insight Specialist</h3>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          Passionate about transforming data into actionable business insights. Skilled in Power BI, SQL, Python, and Excel to drive smart decision-making and effective analysis.
+          Currently building real-world projects for the last 3 months to sharpen my skills in data analytics and visualization.
+        </p>
+        <div class="flex justify-center md:justify-start gap-4">
+          <a href="image/resume.pdf" download class="btn-cv inline-block">Download CV</a>
+          <a href="#contact" class="btn-cv bg-gray-700 hover:bg-gray-900 inline-block">Contact Me</a>
+        </div>
+      </div>
+      <div>
+        <img src="image/look23.png" alt="Professional portrait photo of Narendra Ghanchi in formal business attire, smiling with a confident posture on a dark gradient background" class="profile-pic mx-auto md:mx-0" onerror="this.style.display='none'" />
+      </div>
     </section>
 
-    <section id="skills" class="fade-up">
-        <h2>Skills</h2>
-        <div class="skill-list">
-            <span>Power BI</span>
-            <span>SQL</span>
-            <span>Python</span>
-            <span>Excel</span>
-            <span>Data Visualization</span>
-            <span>Data Cleaning</span>
-        </div>
+    <section id="stats" class="grid grid-cols-2 md:grid-cols-4 text-center border-y border-gray-700 py-6 gap-4 md:gap-0">
+      <div class="stats-item">
+        <h4 class="font-bold text-3xl text-indigo-400">3+</h4>
+        <p class="text-gray-400 mt-1">Months Building Projects</p>
+      </div>
+      <div class="stats-item">
+        <h4 class="font-bold text-3xl text-indigo-400">5+</h4>
+        <p class="text-gray-400 mt-1">Tools & Technologies</p>
+      </div>
+      <div class="stats-item">
+        <h4 class="font-bold text-3xl text-indigo-400">10+</h4>
+        <p class="text-gray-400 mt-1">Projects Completed</p>
+      </div>
+      <div class="stats-item">
+        <h4 class="font-bold text-3xl text-indigo-400">100+</h4>
+        <p class="text-gray-400 mt-1">Hours Learning & Practicing</p>
+      </div>
     </section>
 
-    <section id="projects" class="fade-up">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>HR Analytics Dashboard</h3>
-            <p>Automated HR reports using Power BI to visualize attrition metrics.</p>
-            <a href="https://github.com/narendraghanchi29/HR_ANALYSIS" target="_blank">View Project</a>
-        </div>
-        <div class="project">
-            <h3>Pizza Sales Power BI Dashboard</h3>
-            <p>Visualized pizza sales trends and KPIs through Power BI dashboard.</p>
-            <a href="https://github.com/narendraghanchi29/Pizza_sales_Analysis_powerBI" target="_blank">View Project</a>
-        </div>
-        <div class="project">
-            <h3>Blinkit Sales Analysis</h3>
-            <p>Analyzed sales trends and customer behavior using Excel & Power BI.</p>
-            <a href="https://github.com/narendraghanchi29/Blinkit-Data-Analysis" target="_blank">View Project</a>
-        </div>
-        <div class="project">
-            <h3>Customer Sales Excel Dashboard</h3>
-            <p>Designed dynamic Excel dashboards to visualize sales KPIs & trends.</p>
-            <a href="https://github.com/narendraghanchi29/Customer_Sales_Analysis" target="_blank">View Project</a>
-        </div>
-        <div class="project">
-            <h3>SQL Pizza Sales Analysis</h3>
-            <p>Performed SQL queries to analyze order patterns & customer preferences.</p>
-            <a href="https://github.com/narendraghanchi29/SQL_PROJECT_1" target="_blank">View Project</a>
-        </div>
+    <section id="skills" class="py-10">
+      <h3 class="text-3xl font-bold mb-8 text-center text-indigo-400">Technical Skills & Tools</h3>
+      <ul class="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 text-center text-gray-300 font-semibold">
+        <li class="border border-indigo-500 rounded-lg py-4 hover:bg-indigo-600 transition">Power BI</li>
+        <li class="border border-indigo-500 rounded-lg py-4 hover:bg-indigo-600 transition">SQL</li>
+        <li class="border border-indigo-500 rounded-lg py-4 hover:bg-indigo-600 transition">Python</li>
+        <li class="border border-indigo-500 rounded-lg py-4 hover:bg-indigo-600 transition">Pandas</li>
+        <li class="border border-indigo-500 rounded-lg py-4 hover:bg-indigo-600 transition">Matplotlib</li>
+        <li class="border border-indigo-500 rounded-lg py-4 hover:bg-indigo-600 transition">Seaborn</li>
+        <li class="border border-indigo-500 rounded-lg py-4 hover:bg-indigo-600 transition">Excel</li>
+        <li class="border border-indigo-500 rounded-lg py-4 hover:bg-indigo-600 transition">Business Insight</li>
+        <li class="border border-indigo-500 rounded-lg py-4 hover:bg-indigo-600 transition">Data Analytics</li>
+      </ul>
     </section>
-     <section id="project-gallery" class="fade-up">
-    <h2>Project Gallery</h2>
-    <div class="gallery">
-        <div class="gallery-item">
-            <img src="images/hr_dashboard.png.jpg" alt="HR Analytics Dashboard">
-            <p>HR Analytics Dashboard (Power BI)</p>
+
+    <section id="projects" class="py-10 max-w-6xl mx-auto">
+      <h3 class="text-3xl font-bold mb-8 text-center text-indigo-400">Portfolio Projects</h3>
+      
+      <!-- Example project cards -->
+      <div class="grid gap-10 md:grid-cols-3">
+        <div class="bg-gray-800 rounded-lg p-4 shadow-lg hover:shadow-indigo-400 transition cursor-pointer" onclick="openProjectModal('https://placehold.co/600x400?text=PowerBI+Business+Insight+Dashboard','Project: Interactive Power BI Business Insight Dashboard')">
+          <img src="image/PIzza_dashboard.png.png" alt="Screenshot of an interactive Power BI dashboard displaying colorful charts and visualizations for business insight" class="project-image mb-3" onerror="this.style.display='none'"/>
+          <h4 class="text-xl font-semibold mb-2">Power BI Dashboard</h4>
+          <p class="text-gray-400">Created an interactive Power Bi dashboard to analyze business metrics.</p>
         </div>
-        <div class="gallery-item">
-            <img src="images/plzza_dashboard.png.png" alt="Pizza Sales Dashboard">
-            <p>Pizza Sales Dashboard (Power BI)</p>
+        <div class="bg-gray-800 rounded-lg p-4 shadow-lg hover:shadow-indigo-400 transition cursor-pointer" onclick="openProjectModal('https://placehold.co/600x400?text=SQL+Data+Query+Examples','Project: SQL Data Queries and Reports')">
+          <img src="image/pizza_dashboard2.png.png" alt="Close-up screenshot of SQL queries being executed in a data analytics environment showing performance optimization" class="project-image mb-3" onerror="this.style.display='none'"/>
+          <h4 class="text-xl font-semibold mb-2">Power BI Dashboard 2</h4>
+          <p class="text-gray-400">Complex SQL queries & powerbi dashboard for business data extraction and reporting.</p>
         </div>
-        <div class="gallery-item">
-            <img src="images/Blinkit_dashboard.png.png" alt="Blinkit Sales Dashboard">
-            <p>Blinkit Sales Dashboard (Excel & Power BI)</p>
+        <div class="bg-gray-800 rounded-lg p-4 shadow-lg hover:shadow-indigo-400 transition cursor-pointer" onclick="openProjectModal('https://placehold.co/600x400?text=Python+Data+Analytics','Project: Python Data Analytics Scripts')">
+          <img src="image/Hr_dashboard.png.jpg" alt="powerbi development environment showing use of pandas, matplotlib and seaborn libraries for data visualization" class="project-image mb-3" onerror="this.style.display='none'"/>
+          <h4 class="text-xl font-semibold mb-2">Power BI Dashboard</h4>
+          <p class="text-gray-400">Data analysis and visualization using PowerBi , Excel ,Dax , Dashboard.</p>
         </div>
-        <div class="gallery-item">
-            <img src="images/pizza_dashboard2.png.png" alt="Pizza Sales Dashboard">
-            <p>Customer Sales Dashboard (Excel)</p>
+        <div class="bg-gray-800 rounded-lg p-4 shadow-lg hover:shadow-indigo-400 transition cursor-pointer" onclick="openProjectModal('https://placehold.co/600x400?text=PowerBI+Business+Insight+Dashboard','Project: Interactive Power BI Business Insight Dashboard')">
+          <img src="image/Blinkit_dashboard.png.png" alt="Screenshot of an interactive Excel Dashboard Help Of using SQL quary to analysisng bi  datadisplaying colorful charts and visualizations for business insight" class="project-image mb-3" onerror="this.style.display='none'"/>
+          <h4 class="text-xl font-semibold mb-2">Excel Dashboard / SQL</h4>
+          <p class="text-gray-400">Created an interactive Excel dashboard help of sql to analyze business metrics.</p>
         </div>
+        <div class="bg-gray-800 rounded-lg p-4 shadow-lg hover:shadow-indigo-400 transition cursor-pointer" onclick="openProjectModal('https://placehold.co/600x400?text=PowerBI+Business+Insight+Dashboard','Project: Interactive Power BI Business Insight Dashboard')">
+          <img src="image/SQL (1).png" alt="Screenshot of an interactive Sql Query Help Of using SQL quary to analysisng bi  datadisplaying colorful charts and visualizations for business insight" class="project-image mb-3" onerror="this.style.display='none'"/>
+          <h4 class="text-xl font-semibold mb-2">Excel Dashboard / SQL</h4>
+          <p class="text-gray-400">Created an interactive SQL QUERy Project  to analyze large data and business metrics.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-10 bg-gray-900 rounded-lg max-w-4xl mx-auto my-10 shadow-lg">
+      <h3 class="text-3xl font-bold mb-8 text-center text-indigo-400">Contact Me</h3>
+      <div class="flex flex-col md:flex-row md:justify-around gap-8 text-gray-300">
+        <div>
+          <h4 class="text-xl font-semibold mb-2">Email</h4>
+          <p><a href="mailto:narendraghanchi29@gmail.com" class="text-indigo-400 hover:underline">narendraghanchi29@gmail.com</a></p>
+        </div>
+        <div>
+          <h4 class="text-xl font-semibold mb-2">Phone</h4>
+          <p><a href="tel:+916376494627" class="text-indigo-400 hover:underline">+91 6376494627</a></p>
+        </div>
+        <div>
+          <h4 class="text-xl font-semibold mb-2">LinkedIn</h4>
+          <p><a href="https://www.linkedin.com/in/narendra-ghanchi-b3256a328/" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:underline">linkedin.com/in/narendra-ghanchi</a></p>
+        </div>
+        <div>
+          <h4 class="text-xl font-semibold mb-2">GitHub</h4>
+          <p><a href="https://github.com/narendraghanchi29" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:underline">github.com/narendraghanchi29</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2024 Narendra Ghanchi. All Rights Reserved.
+  </footer>
+
+  <!-- Project Modal -->
+  <div id="projectModal" class="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center p-6 opacity-0 pointer-events-none transition-opacity duration-300 z-50">
+    <div class="bg-gray-900 rounded-lg max-w-4xl w-full shadow-lg relative">
+      <button id="closeModalBtn" class="absolute right-4 top-4 text-indigo-400 text-3xl font-bold cursor-pointer hover:text-indigo-600">&times;</button>
+      <img src="" alt="" id="modalImage" class="rounded-t-lg max-h-[60vh] w-full object-contain" />
+      <div class="p-6 text-center">
+        <h4 id="modalTitle" class="text-2xl font-bold text-indigo-400"></h4>
+      </div>
     </div>
-</section>
+  </div>
 
-    <section id="contact" class="fade-up">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:narendraghanchi29@gmail.com">narendraghanchi29@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/narendra-ghanchi-b3256a328/" target="_blank">Profile</a></p>
-        <p>GitHub: <a href="https://github.com/narendraghanchi29" target="_blank">Repositories</a></p>
-    </section>
-
-    <script src="script.js"></script>
+  <script>
+    // Open project modal with image and title
+    function openProjectModal(imageUrl, title) {
+      const modal = document.getElementById('projectModal');
+      const modalImage = document.getElementById('modalImage');
+      const modalTitle = document.getElementById('modalTitle');
+      modalImage.src = imageUrl;
+      modalImage.alt = title + " - enlarged screenshot";
+      modalTitle.textContent = title;
+      modal.style.opacity = '1';
+      modal.style.pointerEvents = 'auto';
+    }
+    // Close modal logic
+    document.getElementById('closeModalBtn').addEventListener('click', () => {
+      const modal = document.getElementById('projectModal');
+      modal.style.opacity = '0';
+      modal.style.pointerEvents = 'none';
+      document.getElementById('modalImage').src = '';
+      document.getElementById('modalImage').alt = '';
+      document.getElementById('modalTitle').textContent = '';
+    });
+    // Close modal on outside click
+    window.addEventListener('click', (e) => {
+      const modal = document.getElementById('projectModal');
+      if(e.target === modal) {
+        modal.style.opacity = '0';
+        modal.style.pointerEvents = 'none';
+        document.getElementById('modalImage').src = '';
+        document.getElementById('modalImage').alt = '';
+        document.getElementById('modalTitle').textContent = '';
+      }
+    });
+  </script>
 </body>
 </html>
+
